@@ -2,7 +2,6 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const productRoutes = require('./routes/productRoutes');
-
 const { sequelize } = require('./config/db');
 const { connectToRabbitMQ } = require('./config/rabbitmq');
 
@@ -48,7 +47,7 @@ app.get('/', (req, res) => {
 
 
 // Server Initialization
-const PORT = process.env.PORT || 6000;
-app.listen(PORT, () => {
-  console.log(`Product Service running on port ${PORT}`);
+const port = process.env.PORT || 6000;
+app.listen(port, () => {
+  console.log(`Product Service running on port ${port}`);
 });
